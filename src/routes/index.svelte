@@ -1,0 +1,22 @@
+<script lang="ts">
+	import MainCard from '$lib/MainCard/MainCard.svelte';
+	import IntroSection from '$lib/IntroSection/IntroSection.svelte';
+	import SectionTitle from '$lib/SectionTitle/SectionTitle.svelte';
+	import Timeline from '$lib/Timeline/Timeline.svelte';
+    import { timelineData } from '$lib/static/timelineData'
+</script>
+
+<section>
+	<MainCard/>
+	<IntroSection/>
+	<SectionTitle sectionTitle ={"Timeline"}/>
+	<Timeline timelinePosts = {timelineData}/>
+</section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+</style>
