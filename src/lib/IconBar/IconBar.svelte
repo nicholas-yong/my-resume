@@ -1,5 +1,5 @@
 <script lang="ts">
-import Icon from "$lib/Icons/Icon.svelte";
+  import Icon from "../Icons/Icon.svelte"
 const defaultIcons = ['github', 'stackOverflow', 'linkedin', 'mail']
 </script>
 

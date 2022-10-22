@@ -1,3 +1,7 @@
+<script>
+
+</script>
+
 <div class = "introductionBox">
     <div class = "textArea">
         <h1>Hey, </h1>
@@ -10,29 +14,29 @@
     </div>
 </div>
 
-<style>
+<style type="text/scss">
+    @use "../../helpers/styles" as styles;
+
     .introductionBox
     {
         background-color: lightblue;
-        padding: 1rem;
-        position: relative;
         height: 200px;
+        display: flex;
+        align-items: center;
     }
 
     .textArea
     {
+        padding: 0.5rem 1rem;
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
-        position: absolute;
-        gap: 8px;
-        left: 10%;
     }
 
     .textArea > span
     {
         font-size: 18px;
-        line-height: 30px;
+        line-height: 48px;
     }
 
     .textArea > h1
@@ -40,7 +44,31 @@
         font-weight: 700;
         font-size: 24px;
         line-height: 24px;
+        display: block;
+        margin-bottom: 16px;
     }
-    
+
+
+    @media only screen and (max-width: styles.$breakpoint-tablet) {
+        .textArea > span {
+            font-size: 16px;
+            line-height: 30px;
+        }
+    }
+
+    @media only screen and (max-width: styles.$breakpoint-mobile) {
+        .textArea > span {
+            font-size: 13px;
+            line-height: 24px;
+        }
+
+
+        .textArea > h1
+        {
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
 
 </style>

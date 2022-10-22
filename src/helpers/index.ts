@@ -1,1 +1,2 @@
-export * from './styling.ts'
+export * from './styling'
+export * from './store'

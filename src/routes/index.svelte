@@ -9,8 +9,9 @@
 <section>
 	<MainCard/>
 	<IntroSection/>
-	<SectionTitle sectionTitle ={"Timeline"}/>
+	<SectionTitle sectionTitle ={"My Journey"}/>
 	<Timeline timelinePosts = {timelineData}/>
+	<SectionTitle sectionTitle = {"About"}/>
 </section>
 
 <style>
