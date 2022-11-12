@@ -6,53 +6,43 @@
     
     export let menuItems: Menu
     let localSideBarOpen: boolean;
-        let sideBarContainer;
+    let sideBarContainer: HTMLDivElement
+    let hamburgerIcon: HTMLDivElement
 
-    onMount(() => {
-
-
-    isSideBarOpen.subscribe((val) => {
-        val = localSideBarOpen
-    })
-
-    export const openHamburgerMenu = () => {
+    const openHamburgerMenu = () => {
         localSideBarOpen = !localSideBarOpen
     }
 
-    // Setup global listener to close the side bar menu
-    (function (){
-        if(typeof window !== 'undefined')
-        {
-            const mainElement = window.document.getElementById('main-element')
-            mainElement.addEventListener('click', (event) => {
-                if(localSideBarOpen)
-                {
-                    // Check to see if we are clicking outside of the hamburger menu container
-                    const {clientX, clientY} = event
-                    const hamburgerMenuContainerLocation = 
-                    if(clientX)
-                    {
+    onMount(() => {
+        // Setup a click handler on the window - this should be unmounted once the sidebar is unmounted
+        window.document.addEventListener('click', (event) => {
+            if(!sideBarContainer.contains(event.target as Node) && !hamburgerIcon.contains(event.target as Node) && localSideBarOpen)
+            {
+                localSideBarOpen = !localSideBarOpen
+            }
+        })
 
-                    }
-                    openHamburgerMenu()
-                }
-         
-            })
-        }
-    })()
+        isSideBarOpen.subscribe((val) => {
+            val = localSideBarOpen
+        })
     })
 </script>
 
-
-<div bind:this = {sideBarContainer} class= {`${localSideBarOpen ? 'open': 'closed'}`}>
-    <Icon className = {`${localSideBarOpen ? 'active':'inactive'}`} onClick = {openHamburgerMenu}/>
+<div class = {localSideBarOpen ? 'inactive':'active'} bind:this={hamburgerIcon}>
+    <Icon 
+        className = {`hamburger-icon`} 
+        iconName = {'hamburger'} 
+        onClick = {openHamburgerMenu}
+    />
+</div>
+<div bind:this = {sideBarContainer} class= {`hamburger-menu ${localSideBarOpen ? 'open': 'closed'}`}>
     <ul class = "hamburger-menu-container">
         {#each menuItems as {title, path, icon} }
         <li>
-            <a href="/${path}">
-                <div class = "hamburger-menu-item">
+            <a href="/{path}">
+                <div class = "hamburger-menu-item {localSideBarOpen ? 'active':'inactive'}">
                     <Icon iconName = {icon}></Icon>
-                    <span>{title}</span>
+                    <div>{title}</div>
                 </div>
             </a>
         </li>
@@ -65,15 +55,17 @@
     @use "../../helpers/styles" as styles;
 
     .hamburger-menu {
-        z-index: styles.$zIndex-sidebar-menu;
-        background-color: black;
+        background-color: grey;
         // These will be set relative to the browser window
         position: absolute;
         height: 100%;
+        transition: width 0.6s;
+        transition-delay: 0.1s;
+        transition-timing-function: ease;
     
         &.open
         {
-            width: 80%;
+            width: 70%;
         }
 
         &.closed
@@ -82,19 +74,26 @@
         }
     }
 
+    :global(.hamburger-icon) {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
+
     .hamburger-menu-container {
-        padding-left: 1rem;
+        padding-left: 1.5rem;
         padding-top: 0.5rem;
 
         li {
             padding: 1rem 0rem;
+            list-style: none;
         }
 
         a {
-            color: white;
+            color: black;
             font-size: 14px;
             line-height: 14px;
-            font-weight: 700px;
+            font-weight: 700;
         }
     }
 
@@ -102,6 +101,12 @@
         display: flex;
         align-items: center;
         gap: 1rem;
+        color: white;
+   
+
+        svg {
+            fill: white;
+        }
 
         span {
             text-align: center;
@@ -109,12 +114,12 @@
     }
 
     :global(.active) {
-        display: block;
+        visibility: visible;
     }
 
 
     :global(.inactive) {
-        display: none;
+        visibility: hidden;
     }
 
 </style>

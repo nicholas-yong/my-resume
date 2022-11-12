@@ -5,7 +5,7 @@
 	const menuItems: Menu = [
 		{
 			title: 'Home',
-			path: '/',
+			path: '',
 			icon: 'home'
 			
 		},
