@@ -16,11 +16,9 @@
     export let onClick: () => void = () => null
     export let width: number = 30;
     export let height: number = 30;
-
-    console.log('icon' + iconName + itemRef)
 </script>
 
-<div bind:this={itemRef} class = {className} on:click={onClick} style = "width: {width}px; height: {height}px">
+<div bind:this={itemRef} class = {className} on:click={onClick} style = "width: {width}px; height: {height}px; color: black">
     {#if iconName === 'github'}
         <FaGitHub/>
     {:else if iconName === 'stackOverflow'}

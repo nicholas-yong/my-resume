@@ -42,7 +42,7 @@
             <a href="/{path}">
                 <div class = "hamburger-menu-item {localSideBarOpen ? 'active':'inactive'}">
                     <Icon iconName = {icon}></Icon>
-                    <div>{title}</div>
+                    <span>{title}</span>
                 </div>
             </a>
         </li>
@@ -59,7 +59,7 @@
         // These will be set relative to the browser window
         position: absolute;
         height: 100%;
-        transition: width 0.6s;
+        transition: width 0.4s;
         transition-delay: 0.1s;
         transition-timing-function: ease;
     
@@ -78,6 +78,9 @@
         position: absolute;
         top: 0.5rem;
         left: 0.5rem;
+        cursor: pointer;
+
+
     }
 
     .hamburger-menu-container {
@@ -102,6 +105,7 @@
         align-items: center;
         gap: 1rem;
         color: white;
+        text-decoration: none;
    
 
         svg {

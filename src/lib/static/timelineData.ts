@@ -4,7 +4,7 @@ export const timelineData: Array<TimelineItem> = [
     {
         date: '21-09-2022',
         title: 'Joined Goatpath',
-        content: 'I left SWM at this time to pursue a opportunity at Goatpath, a startup with big ambitions for the cloud',
+        content: 'I left SWM at this time to pursue a opportunity at Goatpath.',
     },
     {
         date: '26-06-2021',
