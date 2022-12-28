@@ -1,12 +1,12 @@
 <script lang="ts">
-    export let title: string
-    export let skills: Array<string>
+    import type { SkillList } from './Skills'
+    export let skillsList: SkillList
 </script>
 
 <div>
-    <h3>{title}</h3>
+    <h3>{skillsList.category}</h3>
     <div class="skillsList">
-        {#each skills as skill}
+        {#each skillsList.skills as skill}
             <span>{skill}</span>
         {/each}
     </div>
