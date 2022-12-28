@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { Menu } from "./types"
     import { isSideBarOpen } from '../../helpers/store'
     import Icon from "../Icons/Icon.svelte"
     import { onMount } from "svelte"
+    import type { Menu } from './types'
     
     export let menuItems: Menu
     let localSideBarOpen: boolean;
@@ -84,17 +84,17 @@
     }
 
     .hamburger-menu-container {
-        padding-left: 1.5rem;
-        padding-top: 0.5rem;
+        padding-left: styles.$margins-large;
+        padding-top: styles.$margins-small;
 
         li {
-            padding: 1rem 0rem;
+            padding: styles.$margins-small 0rem;
             list-style: none;
         }
 
         a {
             color: black;
-            font-size: 14px;
+            font-size: styles.$font-size-normal;
             line-height: 14px;
             font-weight: 700;
         }
@@ -103,14 +103,9 @@
     .hamburger-menu-item {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: styles.$margins-normal;
         color: white;
         text-decoration: none;
-   
-
-        svg {
-            fill: white;
-        }
 
         span {
             text-align: center;

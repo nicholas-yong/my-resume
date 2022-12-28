@@ -1,7 +1,6 @@
 <script lang="ts">
 	import TimelineRow from "./TimelineRow.svelte";
 import type { TimelineItem } from "./types";
-import './timeline.css'
 export let timelinePosts: Array<TimelineItem>
 </script>
 
@@ -21,13 +20,14 @@ export let timelinePosts: Array<TimelineItem>
 {/each}
 </div>
 
-<style>
+<style type="text/scss">
+    @use "../../helpers/styles" as styles;
     .timeline-container
     {
         display: grid;
         background-color: darkgray;
         margin: 0 auto;
-        padding: 25px 25px;
+        padding: styles.$margins-large styles.$margins-large;
         color: white;
         width: 100%;
     }

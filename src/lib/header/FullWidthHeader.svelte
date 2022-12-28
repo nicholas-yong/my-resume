@@ -16,22 +16,24 @@ export let menuItems: Menu
 	</div>
 </nav>
 
-<style>
+<style type="text/scss">
+	@use "../../helpers/styles" as styles;
 	nav {
 		width: 100%;
-		margin-bottom: 3rem;
-		padding: 1rem 2rem;
+		margin-bottom: styles.$margins-xxlarge;
+		padding: styles.$margins-normal styles.$margins-xlarge;
 		display: flex;
 	}
 
 	span {
-		font-size: larger;
+		font-size: styles.$font-size-large;
 	}
 
 	.rightAligned
 	{
 		margin-left: auto;
 		display: flex;
+		// This is outside the margin range, so treat it as an exception.
 		gap: 60px;
 	}
 

@@ -27,7 +27,7 @@
 
     .textArea
     {
-        padding: 0.5rem 1rem;
+        padding: styles.$margins-small styles.$margins-normal;
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
@@ -35,37 +35,37 @@
 
     .textArea > span
     {
-        font-size: 18px;
+        font-size: styles.$font-size-normal;
         line-height: 48px;
     }
 
     .textArea > h1
     {
         font-weight: 700;
-        font-size: 24px;
+        font-size: styles.$font-size-large;
         line-height: 24px;
         display: block;
-        margin-bottom: 16px;
+        margin-bottom: styles.$margins-normal;
     }
 
 
     @media only screen and (max-width: styles.$breakpoint-tablet) {
         .textArea > span {
-            font-size: 16px;
+            font-size: styles.$font-size-normal;
             line-height: 30px;
         }
     }
 
     @media only screen and (max-width: styles.$breakpoint-mobile) {
         .textArea > span {
-            font-size: 13px;
+            font-size: styles.$font-size-small;
             line-height: 24px;
         }
 
 
         .textArea > h1
         {
-            font-size: 24px;
+            font-size: styles.$font-size-large;
             line-height: 24px;
         }
     }

@@ -21,19 +21,20 @@
     </div>
 </div>
 
-<style>
+<style type="text/scss">
+    @use "../../helpers/styles" as styles;
     #mainBox
     {
         margin: 0 auto;
-        padding: 2rem;
+        padding: styles.$margins-xlarge;
     }
 
     #informationContainer
     {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+        gap: styles.$margins-normal;
+        padding: styles.$margins-normal;
         align-items: center;
     }
 
@@ -44,14 +45,14 @@
 
     #textInformation-name
     {
-        font-size: 2rem;
+        font-size: styles.$font-size-xlarge;
         display: block;
-        margin-bottom: 0.5rem;
+        margin-bottom: styles.$margins-small;
     }
 
     #textInformation-description
     {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        font-size: styles.$font-size-large;
+        margin-bottom: styles.$margins-small;
     }
 </style>

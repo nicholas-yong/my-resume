@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TimelineContentProps } from "$lib/Timeline/types";
+	import type { TimelineContentProps } from "../types"
 
 
     export let timelineContent: TimelineContentProps
@@ -15,7 +15,8 @@
 </div>
 
 
-<style>
+<style type="text/scss">
+   @use '../../../helpers/styles.scss' as styles;
     .timeline-post {
         background: lightgray;
         border-radius: 20px;
@@ -23,7 +24,7 @@
     }
 
     .timeline-post-text {
-        padding: 1rem;
+        padding: styles.$margins-normal;
     }
 
     .timeline-post-text > h2 

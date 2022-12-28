@@ -6,7 +6,8 @@
     <h2>{sectionTitle}</h2>
 </div>
 
-<style>
+<style type="text/scss">
+    @use "../../helpers/styles" as styles;
     .sectionTitle
     {
         width: 100%;
@@ -15,8 +16,8 @@
 
     .sectionTitle > h2
     {
-        font-size: 24px;
+        font-size: styles.$font-size-large;
         line-height: 20px;
-        padding: 16px 0;
+        padding: styles.$margins-normal 0;
     }
 </style>
