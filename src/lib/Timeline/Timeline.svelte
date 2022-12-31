@@ -10,6 +10,8 @@ export let timelinePosts: Array<TimelineItem>
     <TimelineRow timelinePost = {
        {
          content: timelineRow.content,
+         shortDesc: timelineRow.shortDesc,
+         icon: timelineRow.icon,
          color: timelineRow.color,
          date: timelineRow.date,
          title: timelineRow.title,

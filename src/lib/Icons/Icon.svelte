@@ -6,7 +6,11 @@
     import FaHome from 'svelte-icons/fa/FaHome.svelte'
     import FaQuestion from 'svelte-icons/fa/FaQuestion.svelte'
     import FaAddressBook from 'svelte-icons/fa/FaAddressBook.svelte'
+    import FaBookOpen from 'svelte-icons/fa/FaBookOpen.svelte'
+    import FaAWS from 'svelte-icons/fa/FaAws.svelte'
+    import FaDesktop from 'svelte-icons/fa/FaDesktop.svelte'
     import MdEmail from 'svelte-icons/md/MdMail.svelte'
+
 
 
     export let iconName: string = '';
@@ -33,6 +37,12 @@
         <FaQuestion/>
     {:else if iconName === 'contact'}
         <FaAddressBook/>
+    {:else if iconName === 'aws'}
+        <FaAWS/>
+    {:else if iconName === 'work'}
+        <FaDesktop/>
+    {:else if iconName === 'book'}
+        <FaBookOpen/>
     {:else}
         <MdEmail/>
     {/if}

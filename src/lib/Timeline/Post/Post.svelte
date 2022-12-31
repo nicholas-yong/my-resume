@@ -10,6 +10,7 @@
 <div class="timeline-component timeline-post" style="{alignmentStyles}">
     <div class = "timeline-post-text">
         <h2>{timelineContent.title}</h2>
+        <h3>{timelineContent.shortDesc}</h3>
         <span>{timelineContent.content}</span>
     </div>
 </div>
@@ -21,10 +22,16 @@
         background: lightgray;
         border-radius: 20px;
         max-width: 400px;
+        margin-top: styles.$margins-normal;
+        margin-bottom: styles.$margins-normal;
     }
 
     .timeline-post-text {
         padding: styles.$margins-normal;
+
+        span {
+            white-space: pre-line;
+        }
     }
 
     .timeline-post-text > h2 

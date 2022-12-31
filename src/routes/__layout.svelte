@@ -1,8 +1,8 @@
-<script lang="ts">
+<script context="module" lang="ts">
 	import Header from '$lib/header/Header.svelte';
     import type { Menu } from '$lib/header/types'
 	import '../app.css';
-	const menuItems: Menu = [
+	export const menuItems: Menu = [
 		{
 			title: 'Home',
 			path: '',
@@ -10,9 +10,9 @@
 			
 		},
 		{
-			title: 'About',
-			path: '#about',
-			icon: 'about'
+			title: 'Skills',
+			path: '#skills',
+			icon: 'skills'
 		},
 		{
 			title: 'Contact',

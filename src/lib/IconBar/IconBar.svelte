@@ -1,14 +1,14 @@
-<script lang="ts">
+<script context="module" lang="ts">
   import Icon from "../Icons/Icon.svelte"
 
-  interface ExternalLinks
+  export interface ExternalLinks
   {
      iconName: string 
      externalLink: string
   }
 
 
-const defaultIcons: Array<ExternalLinks> = [{
+export const defaultIcons: Array<ExternalLinks> = [{
     iconName: 'github',
     externalLink: 'https://github.com/nicholas-yong'
  }, {

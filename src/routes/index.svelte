@@ -3,6 +3,8 @@
 	import IntroSection from '$lib/IntroSection/IntroSection.svelte';
 	import SectionTitle from '$lib/SectionTitle/SectionTitle.svelte';
 	import Timeline from '$lib/Timeline/Timeline.svelte';
+	import SkillsCard from '$lib/SkillsCard/SkillsCard.svelte';
+	import Footer from '$lib/Footer/Footer.svelte';
     import { timelineData } from '$lib/static/timelineData'
 </script>
 
@@ -11,7 +13,9 @@
 	<IntroSection/>
 	<SectionTitle sectionTitle ={"My Journey"}/>
 	<Timeline timelinePosts = {timelineData}/>
-	<SectionTitle sectionTitle = {"About"}/>
+	<SectionTitle sectionTitle = {"Skills"}/>
+	<SkillsCard/>
+	<Footer/>
 </section>
 
 <style>

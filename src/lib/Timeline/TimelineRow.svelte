@@ -12,7 +12,9 @@ import Bar from "./Bar/Bar.svelte";
     <svelte:component this = {item} timelineContent = {{
         content: timelinePost.content,
         title: timelinePost.title,
-        alingment: timelinePost.alingment
+        icon: timelinePost.icon,
+        alingment: timelinePost.alingment,
+        shortDesc: timelinePost.shortDesc
     }}
     timelineDate = {{
         date: timelinePost.date,
