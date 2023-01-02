@@ -11,7 +11,7 @@ export let timelinePosts: Array<TimelineItem>
        {
          content: timelineRow.content,
          shortDesc: timelineRow.shortDesc,
-         icon: timelineRow.icon,
+         type: timelineRow.type,
          color: timelineRow.color,
          date: timelineRow.date,
          title: timelineRow.title,
@@ -27,7 +27,6 @@ export let timelinePosts: Array<TimelineItem>
     .timeline-container
     {
         display: grid;
-        background-color: darkgray;
         margin: 0 auto;
         padding: styles.$margins-large styles.$margins-large;
         color: white;

@@ -41,7 +41,7 @@
         <FaAWS/>
     {:else if iconName === 'work'}
         <FaDesktop/>
-    {:else if iconName === 'book'}
+    {:else if iconName === 'education'}
         <FaBookOpen/>
     {:else}
         <MdEmail/>

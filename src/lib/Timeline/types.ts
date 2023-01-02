@@ -1,10 +1,13 @@
+
+export type TimelinePostTypes = 'education' | 'work' | 'volunteering' | 'other'
+
 export interface BaseTimelineProps {
     alingment: 'left' | 'right'
 }
 
 export interface TimelineBarProps 
 {
-    icon: string
+    type: string
     buttonColor: string
 }
 
@@ -17,7 +20,7 @@ export interface TimelineContentProps extends BaseTimelineProps {
     content: string
     shortDesc: string
     title: string 
-    icon: string
+    type: TimelinePostTypes
 }
 
 export interface TimelineItem extends Omit<TimelineContentProps, 'alingment'> {

@@ -3,7 +3,7 @@
 
 
     export let timelineContent: TimelineContentProps
-    $: alignmentStyles = `margin-left: ${timelineContent.alingment === 'left' ? 'auto': '16px'}; margin-right: ${timelineContent.alingment === 'left' ? '16px': 'auto'}`
+    $: alignmentStyles = `margin-left: ${timelineContent.alingment === 'left' ? 'auto': '32px'}; margin-right: ${timelineContent.alingment === 'left' ? '32px': 'auto'}`
            
 </script>
 
@@ -19,18 +19,26 @@
 <style type="text/scss">
    @use '../../../helpers/styles.scss' as styles;
     .timeline-post {
-        background: lightgray;
-        border-radius: 20px;
         max-width: 400px;
-        margin-top: styles.$margins-normal;
-        margin-bottom: styles.$margins-normal;
+        margin-top: styles.$margins-xlarge;
+        margin-bottom: styles.$margins-xlarge;
+        box-shadow: 0px 1px 10px black;
     }
 
     .timeline-post-text {
         padding: styles.$margins-normal;
+        color: black;
 
         span {
             white-space: pre-line;
+        }
+
+        h3 {
+            font-weight: 500;
+        }
+
+        span {
+            font-weight: 300;
         }
     }
 
