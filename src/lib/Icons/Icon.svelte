@@ -14,15 +14,15 @@
 
 
     export let iconName: string = '';
-    export let className: string = '';
-    export let itemRef: HTMLDivElement = undefined
+
+    export let itemRef: HTMLDivElement;
     // Unsure if this typing is kinda unnessary, someone more experienced can comment
     export let onClick: () => void = () => null
     export let width: number = 30;
     export let height: number = 30;
 </script>
 
-<div bind:this={itemRef} class = {className} on:click={onClick} style = "width: {width}px; height: {height}px; color: black">
+<div bind:this={itemRef} on:click={onClick} style = "width: {width}px; height: {height}px; color: black">
     {#if iconName === 'github'}
         <FaGitHub/>
     {:else if iconName === 'stackOverflow'}
