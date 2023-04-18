@@ -10,15 +10,14 @@
         buttonColor: string
         iconColor: string
     }
-    
-    // Local functions to the component
+
     const mapPostTypeToColor = (postType: TimelinePostTypes): BarCustomisation => {
         switch(postType)
         {
             case 'education':
                 return {
-                    buttonColor: 'lightblue',
-                    iconColor: 'black',
+                    buttonColor: 'rgb(0, 143, 248)',
+                    iconColor: 'white',
                 }
             case 'work':
                 return {
@@ -55,7 +54,6 @@
             iconName = {timelineContent.type}
             width = {25}
             height = {25}
-            className={'timeline-icon'}
         ></Icon>
     </div>
 </div>
@@ -71,23 +69,23 @@
         color: var(--titleColor);
     }
 
-    .timeline-point {
-        position: absolute;
-        top: 32px;
-        width: 45px;
-        height: 45px; 
+    :global(.timeline-point) {
+        position: relative;
+        width: 50px;
+        height: 50px; 
         background-color: var(--backgroundColor);
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 2px 1px -1px rgb(0 0 0 / 12%);
         border-radius: 50%;
-        transform: translate(-1.5rem);
+        transform: translate(-1.4rem, 1.5rem);
 
-        div {
+        :global(div) {
             margin: 0 auto;
-        }
-
-        .timeline-icon {
             color: var(--iconColor);
-            margin-left: 12px;
-            margin-right: 12px;
+            position: absolute;
+            bottom: 0.7rem;
+            left: 0.7rem;
+
+
         }
     }
 

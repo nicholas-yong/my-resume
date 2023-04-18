@@ -31,5 +31,6 @@ export let timelinePosts: Array<TimelineItem>
         padding: styles.$margins-large styles.$margins-large;
         color: white;
         width: 100%;
+        position: relative;
     }
 </style>

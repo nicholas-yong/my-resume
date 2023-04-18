@@ -9,13 +9,13 @@
 </script>
 
 <section>
-	<MainCard/>
-	<IntroSection/>
-	<SectionTitle sectionTitle ={"My Journey"}/>
-	<Timeline timelinePosts = {timelineData}/>
-	<SectionTitle sectionTitle = {"Skills"}/>
-	<SkillsCard/>
-	<Footer/>
+		<MainCard/>
+		<IntroSection/>
+		<SectionTitle sectionTitle ={"My Journey"}/>
+		<Timeline timelinePosts = {timelineData}/>
+		<SectionTitle sectionTitle = {"Skills"}/>
+		<SkillsCard/>
+		<Footer/>
 </section>
 
 <style>

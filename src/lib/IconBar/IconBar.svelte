@@ -27,7 +27,7 @@ export const defaultIcons: Array<ExternalLinks> = [{
     {#each defaultIcons as icon, i}
     <a href = {icon.externalLink}>
         <div class = "iconContainer">
-            <Icon iconName = {icon.iconName}/>
+            <Icon iconName = {icon.iconName} className={'bar-icon'}/>
         </div>
     </a>
     {/each}
@@ -39,5 +39,10 @@ export const defaultIcons: Array<ExternalLinks> = [{
         display: flex;
         flex-direction: row;
         gap: 16px;
+    }
+
+    :global(.bar-icon)
+    {
+      color: black;
     }
 </style>

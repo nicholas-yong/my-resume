@@ -15,9 +15,9 @@
             <div class = "innerRow">
                 <h3>Contact Me</h3>
                 <div class = "contactInformation">
-                    <span>Email:</span><a href = {extractIcon('mail', defaultIcons)}>&nbsp;nickholas.yong@gmail.com</a>
+                    <a href = {extractIcon('mail', defaultIcons)}>Email</a>
                     <br/>
-                    <span>LinkedIn:</span><a href = {extractIcon('linkedin', defaultIcons)}>&nbsp;My LinkedIn</a>
+                    <a href = {extractIcon('linkedin', defaultIcons)}>Linkedin</a>
                 </div>
             </div>
             <div class = "innerRow">
@@ -42,6 +42,7 @@
 
         h3 {
             color: white;
+            white-space: nowrap;
         }
 
         span {
@@ -67,7 +68,7 @@
         display: flex;
         margin-left: auto;
         margin-right: auto;
-        gap: 10%;
+        gap: 20%;
     }
 
     .innerRow 

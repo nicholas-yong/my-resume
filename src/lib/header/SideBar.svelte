@@ -8,34 +8,37 @@
     let localSideBarOpen: boolean;
     let sideBarContainer: HTMLDivElement
     let hamburgerIcon: HTMLDivElement
+    let localOverflowVal: string
+    let iconName: string = 'hamburger'
 
     const openHamburgerMenu = () => {
         localSideBarOpen = !localSideBarOpen
     }
 
     onMount(() => {
+        localOverflowVal = document.body.style.overflow
         // Setup a click handler on the window - this should be unmounted once the sidebar is unmounted
         window.document.addEventListener('click', (event) => {
-            if(!sideBarContainer.contains(event.target as Node) && !hamburgerIcon.contains(event.target as Node) && localSideBarOpen)
-            {
-                localSideBarOpen = !localSideBarOpen
-            }
+            event.preventDefault()
+            iconName = localSideBarOpen ? 'close': 'hamburger'
+            document.body.style.overflow = localSideBarOpen ? 'hidden' : localOverflowVal
+            localSideBarOpen = !localSideBarOpen
+
+            console.log('localSideBarValue', localSideBarOpen)
         })
 
-        isSideBarOpen.subscribe((val) => {
+        isSideBarOpen.subscribe(val => {
             val = localSideBarOpen
         })
     })
 </script>
 
-<div class = {localSideBarOpen ? 'inactive':'active'} bind:this={hamburgerIcon}>
-    <Icon 
-        className = {`hamburger-icon`} 
-        iconName = {'hamburger'} 
-        onClick = {openHamburgerMenu}
-    />
-</div>
 <div bind:this = {sideBarContainer} class= {`hamburger-menu ${localSideBarOpen ? 'open': 'closed'}`}>
+<Icon 
+iconName = {iconName} 
+onClick = {() => openHamburgerMenu()}
+className = {`hamburger-icon ${localSideBarOpen? 'invisible': 'visible'}`}
+/>
     <ul class = "hamburger-menu-container">
         {#each menuItems as {title, path, icon} }
         <li>
@@ -49,6 +52,8 @@
         {/each}
     </ul>
 </div>
+<div id="overlay" class="{localSideBarOpen ? 'active':'inactive'}"></div>
+
 
 
 <style type="text/scss">
@@ -59,6 +64,7 @@
         // These will be set relative to the browser window
         position: absolute;
         height: 100%;
+        z-index: 3;
         transition: width 0.4s;
         transition-delay: 0.1s;
         transition-timing-function: ease;
@@ -74,18 +80,34 @@
         }
     }
 
-    :global(.hamburger-icon) {
+    #overlay {
+        width: 100%;
+        height: 100%;
         position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
+        background-color: rgb(0, 0, 0, 0.6);
+        opacity: 0.6;
+    }
+
+    :global(.hamburger-icon) {
         cursor: pointer;
+        margin-left: styles.$margins-large;
+        transition: background 0.3s ease-in-out;
+    }
 
+    :global(.visible)
+    {
+        opacity: 1;
+        pointer-events: all;
+    }
 
+    :global(.invisible)
+    {
+        opacity: 0;
+        pointer-events: none;
     }
 
     .hamburger-menu-container {
-        padding-left: styles.$margins-large;
-        padding-top: styles.$margins-small;
+        margin-left: styles.$margins-large;
 
         li {
             padding: styles.$margins-small 0rem;
@@ -119,6 +141,8 @@
 
     :global(.inactive) {
         visibility: hidden;
+        width: 0;
+        height: 0;
     }
 
 </style>
