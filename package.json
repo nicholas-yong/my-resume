@@ -34,6 +34,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
+		"@sveltejs/adapter-static": "^2.0.2",
 		"@tsconfig/svelte": "^3.0.0",
 		"cookie": "^0.4.1",
 		"sass": "^1.55.0",

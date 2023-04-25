@@ -7,46 +7,43 @@
   export let menuItems: Menu
   let localSideBarOpen: boolean = false
   let sideBarContainer: HTMLDivElement
-  let hamburgerIcon: HTMLDivElement
   let localOverflowVal: string
   let iconName: string = 'hamburger'
+
+  const menuToggle = (event: MouseEvent) => {
+    event.preventDefault()
+
+    const { top, right, bottom, left } =
+      sideBarContainer.getBoundingClientRect()
+    const clickedWithinMenu = isClickedWithin(
+      {
+        top,
+        right,
+        bottom,
+        left,
+      },
+      {
+        x: event.x,
+        y: event.y,
+      },
+    )
+
+    // We want to close the menu if the click event occured outside of it.
+    if (!clickedWithinMenu) {
+      iconName = 'hamburger'
+      document.body.style.overflow = localOverflowVal
+      localSideBarOpen = false
+    }
+  }
 
   const openHamburgerMenu = (event: MouseEvent) => {
     event.stopImmediatePropagation()
     localSideBarOpen = !localSideBarOpen
 
-    const menuToggle = (event: MouseEvent) => {
-      console.log('run toggle')
-      event.preventDefault()
-
-      const { top, right, bottom, left } =
-        sideBarContainer.getBoundingClientRect()
-      const clickedWithinMenu = isClickedWithin(
-        {
-          top,
-          right,
-          bottom,
-          left,
-        },
-        {
-          x: event.x,
-          y: event.y,
-        },
-      )
-
-      // We want to close the menu if the click event occured outside of it.
-      if (!clickedWithinMenu) {
-        iconName = 'hamburger'
-        document.body.style.overflow = localOverflowVal
-        localSideBarOpen = false
-      }
-    }
-
     if (localSideBarOpen) {
-      console.log('add toggle')
+      document.body.style.overflow = 'hidden'
       window.document.addEventListener('click', menuToggle)
     } else {
-      console.log('remove toggle')
       window.document.removeEventListener('click', menuToggle)
     }
   }
@@ -114,7 +111,6 @@
     height: 100%;
     z-index: 3;
     transition: width 0.4s;
-    transition-delay: 0.1s;
     transition-timing-function: ease;
 
     &.open {
@@ -147,12 +143,13 @@
   }
 
   :global(.invisible) {
-    opacity: 0;
+    color: white;
     pointer-events: none;
   }
 
   .hamburger-menu-container {
     margin-left: styles.$margins-large;
+    margin-top: styles.$margins-normal;
 
     li {
       padding: styles.$margins-small 0rem;
