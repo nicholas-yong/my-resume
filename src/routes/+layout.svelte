@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   import Header from '$lib/header/Header.svelte'
-  import type { Menu } from '$lib/header/types'
+  import { Menu } from '$lib/header/types'
   import '../app.css'
   export const menuItems: Menu = [
     {
