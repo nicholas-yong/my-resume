@@ -4,12 +4,27 @@
   import Post from './Post/Post.svelte'
   import type { TimelinePost } from './types'
   import { isMobile } from '../../helpers'
+  import { SvelteComponent, onMount } from 'svelte'
   export let timelinePost: TimelinePost
-  const layout = isMobile()
-    ? [Bar, Post]
-    : timelinePost.alingment === 'left'
-    ? [Post, Bar, Date]
-    : [Date, Bar, Post]
+
+  let layout: Array<any> = []
+
+  const renderLayout = () => {
+    layout = isMobile()
+      ? [Bar, Post]
+      : timelinePost.alingment === 'left'
+      ? [Post, Bar, Date]
+      : [Date, Bar, Post]
+  }
+
+  renderLayout()
+  onMount(() => {
+    window.addEventListener('resize', renderLayout)
+
+    return () => {
+      window.removeEventListener('resize', renderLayout)
+    }
+  })
 </script>
 
 <div class="timeline-row">
@@ -33,9 +48,16 @@
 
 <style type="scss">
   @use '../../helpers/styles' as styles;
-  @media only screen and (max-width: styles.$breakpoint-tablet) {
+  @media only screen and (max-width: styles.$breakpoint-mobile) {
     .timeline-row {
       grid-template-columns: 3px 1fr;
+      display: grid;
+    }
+  }
+
+  @media only screen and (min-width: styles.$breakpoint-mobile) {
+    .timeline-row {
+      grid-template-columns: 1fr 3px 1fr;
       display: grid;
     }
   }

@@ -1,28 +1,27 @@
- // Breakpoint variables (to help write media queries)
-	$breakpoint-mobile: 480px;
-	$breakpoint-tablet: 1020px;
-	$breakpoint-desktop: 1280px;
+// Breakpoint variables (to help write media queries)
+$breakpoint-mobile: 420px;
+$breakpoint-tablet: 1020px;
+$breakpoint-desktop: 1280px;
 
 // Standard site wide styling variables
- 	$gutter-size-mobile: 32px;
+$gutter-size-mobile: 32px;
 
 // Z-indexes of key elements
- 	$zIndex-sidebar-menu: 2;
+$zIndex-sidebar-menu: 2;
 
 // Font-trickery (help me)
-	$font-size-xsmall: 0.5rem;
- 	$font-size-normal: 1rem;
-	$font-size-small: 0.75rem;
-	$font-size-large: 1.5rem;
-	$font-size-xlarge: 2rem;
+$font-size-xsmall: 0.5rem;
+$font-size-normal: 1rem;
+$font-size-small: 0.75rem;
+$font-size-large: 1.5rem;
+$font-size-xlarge: 2rem;
 
 // Margins/paddings
- 	$margins-small: 0.5rem;
- 	$margins-normal: 1rem;
-	$margins-large: 1.5rem;
-	$margins-xlarge: 2rem;
-	$margins-xxlarge: 3rem;
-	$margins-xxxlarge: 4rem;
-	$margins-xxxxlarge: 5rem;
-	$margins-xxxxlarge: 6rem;
-	
+$margins-small: 0.5rem;
+$margins-normal: 1rem;
+$margins-large: 1.5rem;
+$margins-xlarge: 2rem;
+$margins-xxlarge: 3rem;
+$margins-xxxlarge: 4rem;
+$margins-xxxxlarge: 5rem;
+$margins-xxxxlarge: 6rem;
