@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<style type="text/scss">
+<style type="text/scss" lang="scss">
   @use '../../../helpers/styles.scss' as styles;
   .timeline-post {
     max-width: 400px;

@@ -17,7 +17,7 @@
   </div>
 {/if}
 
-<style type="text/scss">
+<style type="text/scss" lang="scss">
   @use '../../../helpers/styles.scss' as styles;
 
   span {

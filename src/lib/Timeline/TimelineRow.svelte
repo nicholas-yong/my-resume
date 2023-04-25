@@ -46,7 +46,7 @@
   {/each}
 </div>
 
-<style type="scss">
+<style type="scss" lang="scss">
   @use '../../helpers/styles' as styles;
   @media only screen and (max-width: styles.$breakpoint-mobile) {
     .timeline-row {

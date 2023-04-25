@@ -101,7 +101,7 @@
 </div>
 <div id="overlay" class={localSideBarOpen ? 'active' : 'inactive'} />
 
-<style type="text/scss">
+<style type="text/scss" lang="scss">
   @use '../../helpers/styles' as styles;
 
   .hamburger-menu {

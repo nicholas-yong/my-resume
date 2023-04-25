@@ -24,6 +24,7 @@
     "eslint-plugin-svelte3": "^4.0.0",
     "prettier": "^2.6.2",
     "prettier-plugin-svelte": "^2.7.0",
+    "sass": "^1.62.0",
     "svelte": "^3.54.0",
     "svelte-check": "^3.0.1",
     "svelte-preprocess": "^4.10.7",
@@ -36,7 +37,6 @@
     "@fontsource/fira-mono": "^4.5.0",
     "@tsconfig/svelte": "^3.0.0",
     "cookie": "^0.4.1",
-    "sass": "^1.55.0",
     "svelte-css-vars": "^0.0.3",
     "svelte-icons": "^2.1.0",
     "svelte-preprocess-import-assets": "^0.1.6"

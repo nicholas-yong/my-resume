@@ -1,6 +1,6 @@
 <script lang="ts">
   import { defaultIcons, type ExternalLinks } from '../IconBar/IconBar.svelte'
-  import { menuItems } from '../../routes/__layout.svelte'
+  import { menuItems } from '../../routes/+layout.svelte'
 
   // There are probably better ways of doing this.
   const extractIcon = (linkToFind: string, iconArray: Array<ExternalLinks>) => {
@@ -33,7 +33,7 @@
   </div>
 </div>
 
-<style type="text/scss">
+<style type="text/scss" lang="scss">
   @use '../../helpers/styles' as styles;
   .footerContainer {
     background-color: black;
