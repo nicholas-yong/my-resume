@@ -67,7 +67,9 @@
     width: 50px;
     height: 50px;
     background-color: var(--backgroundColor);
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 20%),
+      0 1px 1px 0 rgb(0 0 0 / 14%),
       0 2px 1px -1px rgb(0 0 0 / 12%);
     border-radius: 50%;
     transform: translate(-1.4rem, 1.5rem);

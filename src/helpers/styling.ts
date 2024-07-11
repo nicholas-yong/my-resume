@@ -18,7 +18,7 @@ export const breakpoints: Breakpoints = {
   sm: 768,
   xs: 660,
   // Upper limit for mobile
-  xxs: 420,
+  xxs: 430,
 }
 
 export const isMobile = () => {

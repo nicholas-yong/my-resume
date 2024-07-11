@@ -1,48 +1,45 @@
-<script context="module" lang="ts">
-  import Icon from "../Icons/Icon.svelte"
+<script lang="ts">
+  import Icon from '../Icons/Icon.svelte'
+  import { defaultIcons, type IconSize } from './types'
+  export let iconSize: IconSize = 'md';
 
-  export interface ExternalLinks
-  {
-     iconName: string 
-     externalLink: string
+  const mapIconSizeToWidthHeight = (iconSize: IconSize) => {
+    switch(iconSize) {
+      case 'md': 
+        return {
+          width: 30,
+          height: 30,
+        }
+      case 'sm': 
+        return {
+          width: 20,
+          height: 20,
+        }
+    }
   }
 
 
-export const defaultIcons: Array<ExternalLinks> = [{
-    iconName: 'github',
-    externalLink: 'https://github.com/nicholas-yong'
- }, {
-    iconName: 'stackOverflow',
-    externalLink: 'https://stackoverflow.com/users/6099144/nicholas-yong',
-  }, {
-    iconName: 'linkedin',
-    externalLink: 'https://www.linkedin.com/in/nicholasyong97/',
-  }, {
-    iconName: 'mail',
-    externalLink: 'mailto:nickholas.yong@gmail.com'
-  }]
+  const { width, height }  = mapIconSizeToWidthHeight(iconSize);
 </script>
 
-<div class = "iconBar">
-    {#each defaultIcons as icon, i}
-    <a href = {icon.externalLink}>
-        <div class = "iconContainer">
-            <Icon iconName = {icon.iconName} className={'bar-icon'}/>
-        </div>
+<div class="iconBar">
+  {#each defaultIcons as icon, i}
+    <a href={icon.externalLink}>
+      <div class="iconContainer">
+        <Icon iconName={icon.name} className={'bar-icon'} width={width} height={height}/>
+      </div>
     </a>
-    {/each}
+  {/each}
 </div>
 
 <style>
-    .iconBar
-    {
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-    }
+  .iconBar {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
 
-    :global(.bar-icon)
-    {
-      color: black;
-    }
+  :global(.bar-icon) {
+    color: white;
+  }
 </style>

@@ -1,43 +1,28 @@
 <script lang="ts">
-  import { defaultIcons, type ExternalLinks } from '../IconBar/IconBar.svelte'
-  import { menuItems } from '../../routes/+layout.svelte'
+  import { defaultIcons, type ExternalLinks } from '$lib/IconBar/types'
+  import Particles from '$lib/Misc/Particles.svelte'
 
-  // There are probably better ways of doing this.
-  const extractIcon = (linkToFind: string, iconArray: Array<ExternalLinks>) => {
-    return iconArray.filter((icon) => icon.iconName === linkToFind)[0]
-      .externalLink
-  }
+  const { externalLink: emailLink, rawValue: email } = defaultIcons.find(({ name }) => name === 'mail') || {} as ExternalLinks;
+  const { externalLink: linkedinLink, rawValue: linkedin } = defaultIcons.find(({ name }) => name === 'linkedin') || {} as ExternalLinks;
 </script>
 
-<div class="footerContainer">
+<div id="footer">
+  <Particles particlesId="footerParticles"/>
   <div class="rowContainer">
-    <div class="firstRow">
       <div class="innerRow">
         <h3>Contact Me</h3>
         <div class="contactInformation">
-          <a href={extractIcon('mail', defaultIcons)}>Email</a>
-          <br />
-          <a href={extractIcon('linkedin', defaultIcons)}>Linkedin</a>
+          <h4>Email:</h4><a href={emailLink}>{email}</a>
+          <h4>LinkedIn:</h4><a href={linkedinLink}>{linkedin}</a>
         </div>
       </div>
-      <div class="innerRow">
-        <h3>Site Map</h3>
-        {#each menuItems as { title }}
-          <span>{title}</span>
-        {/each}
-      </div>
     </div>
-    <div class="secondRow">
-      <div class="copyrightInformation" />
-    </div>
-  </div>
 </div>
 
 <style type="text/scss" lang="scss">
   @use '../../helpers/styles' as styles;
-  .footerContainer {
-    background-color: black;
-
+  #footer {
+    position: relative;
     h3 {
       color: white;
       white-space: nowrap;
@@ -53,25 +38,36 @@
     }
   }
 
+  :global(#footerParticles) {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+  }
+
   .rowContainer {
     padding-top: styles.$margins-large;
     padding-bottom: styles.$margins-large;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
-
-  .firstRow {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 20%;
-  }
-
   .innerRow {
     padding: styles.$margins-small;
     display: flex;
     flex-direction: column;
     align-content: space-between;
+    gap: styles.$margins-normal;
+  }
+
+  .contactInformation {
+    display: flex;
+    flex-direction: column;
     gap: styles.$margins-small;
+
+    h4 {
+      color: white;
+    }
   }
 </style>
