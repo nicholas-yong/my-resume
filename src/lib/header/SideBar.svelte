@@ -134,6 +134,7 @@
     cursor: pointer;
     margin-left: styles.$margins-large;
     margin-top: styles.$margins-normal;
+    color: white;
     transition: background 0.3s ease-in-out;
   }
 

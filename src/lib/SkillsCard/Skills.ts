@@ -8,20 +8,11 @@ export interface SkillList {
 export const Skills: Array<SkillList> = [
   {
     category: 'languages',
-    skills: ['Typescript', 'HTML', 'CSS/SCSS', 'SQL', 'Python', 'Bash'],
+    skills: ['TypeScript', 'HTML', 'CSS/SCSS', 'SQL', 'Python', 'Bash'],
   },
   {
     category: 'framework',
-    skills: [
-      'Node',
-      'React',
-      'Pulumi',
-      'AWS (CDK)',
-      'Chakra',
-      'Emotion',
-      'NX',
-      'Express',
-    ],
+    skills: ['Node', 'React', 'Pulumi', 'AWS (CDK)', 'Chakra', 'Emotion', 'NX'],
   },
   {
     category: 'tools',

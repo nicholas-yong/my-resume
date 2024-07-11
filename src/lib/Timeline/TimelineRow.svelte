@@ -13,8 +13,8 @@
     layout = isMobile()
       ? [Bar, Post]
       : timelinePost.alingment === 'left'
-      ? [Post, Bar, Date]
-      : [Date, Bar, Post]
+        ? [Post, Bar, Date]
+        : [Date, Bar, Post]
   }
 
   renderLayout()

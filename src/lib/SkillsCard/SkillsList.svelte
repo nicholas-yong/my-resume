@@ -9,13 +9,18 @@
 </script>
 
 <div class="skillsContainer">
-  <h3>
-    {skillsList.category.charAt(0).toUpperCase() +
-      skillsList.category.substring(1) +
-      '.'}
-  </h3>
+  <div class="heading">
+    <h3>
+      {skillsList.category.charAt(0).toUpperCase() +
+        skillsList.category.substring(1)}
+    </h3>
+  </div>
   <div class="skillsList">
-    <span>{cleanSkillString(skillsList.skills)}</span>&nbsp;
+    <ul>
+      {#each skillsList.skills as skill}
+        <li>{skill}</li>
+      {/each}
+    </ul>
   </div>
 </div>
 
@@ -27,14 +32,18 @@
     flex-wrap: wrap;
   }
 
+  .heading {
+    text-align: center;
+  }
+
   .skillsContainer {
-    margin-top: styles.$margins-large;
+    margin-top: styles.$margins-normal-large;
     position: relative;
 
     &:before {
       content: '';
       position: absolute;
-      width: 40%;
+      width: 100%;
       background-color: black;
       height: 1px;
       top: -10px;

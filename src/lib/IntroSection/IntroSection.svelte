@@ -5,7 +5,7 @@
   <div class="textArea">
     <h1>Hey,</h1>
     <span
-      >I'm Nicholas Yong, a fullstack developer currently working in Perth.
+      >I'm Nick, a Full Stack Developer currently working in Perth.
       <br />
       <br />
       I primarily focus on web and cloud technologies, but really I'm eager to learn

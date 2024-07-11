@@ -3,7 +3,7 @@
   export let menuItems: Menu
 </script>
 
-<nav>
+<nav id="header">
   <div class="nameHeader">
     <span>Nicholas Yong</span>
   </div>
@@ -18,11 +18,13 @@
 
 <style type="text/scss" lang="scss">
   @use '../../helpers/styles' as styles;
-  nav {
+  #header {
     width: 100%;
-    margin-bottom: styles.$margins-xxlarge;
     padding: styles.$margins-normal styles.$margins-xlarge;
     display: flex;
+    background-color: black;
+    position: fixed;
+    z-index: 1
   }
 
   span {
@@ -31,14 +33,19 @@
 
   .rightAligned {
     margin-left: auto;
+    margin-top: 6px;
     display: flex;
     // This is outside the margin range, so treat it as an exception.
     gap: 60px;
   }
 
+  .nameHeader {
+    color: white;
+  }
+
   .menuItem > a {
     position: relative;
-    color: black;
+    color: white;
   }
 
   .menuItem > a:hover {
@@ -49,7 +56,7 @@
     content: '';
     position: absolute;
     width: 0;
-    background-color: black;
+    background-color: white;
     height: 2px;
     bottom: -3px;
     left: 0;

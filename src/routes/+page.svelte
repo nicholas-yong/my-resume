@@ -3,9 +3,14 @@
   import IntroSection from '$lib/IntroSection/IntroSection.svelte'
   import SectionTitle from '$lib/SectionTitle/SectionTitle.svelte'
   import Timeline from '$lib/Timeline/Timeline.svelte'
-  import SkillsCard from '$lib/SkillsCard/SkillsCard.svelte'
   import Footer from '$lib/Footer/Footer.svelte'
   import { timelineData } from '$lib/static/timelineData'
+  import { particlesInit } from '@tsparticles/svelte'
+  import { loadSlim } from '@tsparticles/slim'
+
+  void particlesInit(async (engine) => {
+    await loadSlim(engine)
+  })
 </script>
 
 <section>
@@ -13,8 +18,6 @@
   <IntroSection />
   <SectionTitle sectionTitle={'My Journey'} />
   <Timeline timelinePosts={timelineData} />
-  <SectionTitle sectionTitle={'Skills'} />
-  <SkillsCard />
   <Footer />
 </section>
 
