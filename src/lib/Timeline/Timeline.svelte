@@ -31,4 +31,10 @@
     width: 100%;
     position: relative;
   }
+
+  @media only screen and (max-width: styles.$breakpoint-mobile) {
+    .timeline-container {
+      padding-left: styles.$margins-xlarge;
+    }
+  }
 </style>

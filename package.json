@@ -27,6 +27,7 @@
     "sass": "^1.62.0",
     "svelte": "^4.2.18",
     "svelte-check": "^3.8.4",
+    "svelte-icons": "^2.1.0",
     "svelte-preprocess": "^6.0.1",
     "tslib": "^2.3.1",
     "typescript": "^5.5.3",
@@ -40,7 +41,6 @@
     "@tsparticles/svelte": "^3.1.1",
     "cookie": "^0.4.1",
     "svelte-css-vars": "^0.0.3",
-    "svelte-icons": "^2.1.0",
     "svelte-preprocess-import-assets": "^1.1.0"
   }
 }

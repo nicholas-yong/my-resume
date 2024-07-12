@@ -1,5 +1,3 @@
-export type TimelinePostTypes = 'education' | 'work' | 'volunteering' | 'other'
-
 export interface BaseTimelineProps {
   alingment: 'left' | 'right'
 }
@@ -14,16 +12,16 @@ export interface TimelineDateProps extends BaseTimelineProps {
 }
 
 export interface TimelineContentProps extends BaseTimelineProps {
-  // I'm not sure if we'll actually need the alingment.., but lets leave it there in case its used in the future.
   content: string
   shortDesc: string
   title: string
-  type: TimelinePostTypes
+  type: string
+  color?: string // Defaults to white
+  borderRadius?: boolean // Defaults to false
 }
 
 export interface TimelineItem extends Omit<TimelineContentProps, 'alingment'> {
   date: string
-  color?: string // Defaults to white
 }
 
 export type TimelinePost = TimelineItem & BaseTimelineProps
