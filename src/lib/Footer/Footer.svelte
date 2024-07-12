@@ -2,21 +2,26 @@
   import { defaultIcons, type ExternalLinks } from '$lib/IconBar/types'
   import Particles from '$lib/Misc/Particles.svelte'
 
-  const { externalLink: emailLink, rawValue: email } = defaultIcons.find(({ name }) => name === 'mail') || {} as ExternalLinks;
-  const { externalLink: linkedinLink, rawValue: linkedin } = defaultIcons.find(({ name }) => name === 'linkedin') || {} as ExternalLinks;
+  const { externalLink: emailLink, rawValue: email } =
+    defaultIcons.find(({ name }) => name === 'mail') || ({} as ExternalLinks)
+  const { externalLink: linkedinLink, rawValue: linkedin } =
+    defaultIcons.find(({ name }) => name === 'linkedin') ||
+    ({} as ExternalLinks)
 </script>
 
 <div id="footer">
-  <Particles particlesId="footerParticles"/>
+  <Particles particlesId="footerParticles" />
   <div class="rowContainer">
-      <div class="innerRow">
-        <h3>Contact Me</h3>
-        <div class="contactInformation">
-          <h4>Email:</h4><a href={emailLink}>{email}</a>
-          <h4>LinkedIn:</h4><a href={linkedinLink}>{linkedin}</a>
-        </div>
+    <div class="innerRow">
+      <h3>Contact Me</h3>
+      <div class="contactInformation">
+        <h4>Email:</h4>
+        <a href={emailLink}>{email}</a>
+        <h4>LinkedIn:</h4>
+        <a href={linkedinLink}>{linkedin}</a>
       </div>
     </div>
+  </div>
 </div>
 
 <style type="text/scss" lang="scss">

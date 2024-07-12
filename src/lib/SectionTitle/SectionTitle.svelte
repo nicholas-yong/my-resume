@@ -1,11 +1,11 @@
 <script lang="ts">
-  import Particles from "$lib/Misc/Particles.svelte";
+  import Particles from '$lib/Misc/Particles.svelte'
   export let sectionTitle: string
 </script>
 
 <div class="sectionTitle">
   <div class="title-particles-container">
-    <Particles particlesId={`${sectionTitle}-particles`}/>
+    <Particles particlesId={`${sectionTitle}-particles`} />
   </div>
   <h2>{sectionTitle}</h2>
 </div>

@@ -28,7 +28,7 @@
       >
     </div>
     <div class="socialLinks">
-      <IconBar iconSize = {'md'}/>
+      <IconBar iconSize={'md'} />
     </div>
   </div>
 </div>
@@ -120,5 +120,4 @@
       height: 100px;
     }
   }
-
 </style>

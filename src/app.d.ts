@@ -16,3 +16,13 @@ declare namespace App {
 
   // interface Stuff {}
 }
+
+declare module 'svelte-icons/fa/*.svelte' {
+  import { SvelteComponentTyped } from 'svelte'
+  export default class extends SvelteComponentTyped<{}> {}
+}
+
+declare module 'svelte-icons/md/*.svelte' {
+  import { SvelteComponentTyped } from 'svelte'
+  export default class extends SvelteComponentTyped<{}> {}
+}

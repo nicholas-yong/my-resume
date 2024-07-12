@@ -24,7 +24,7 @@
     display: flex;
     background-color: black;
     position: fixed;
-    z-index: 1
+    z-index: 1;
   }
 
   span {

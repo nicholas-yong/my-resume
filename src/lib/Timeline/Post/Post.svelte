@@ -1,12 +1,15 @@
 <script lang="ts">
   import { isMobile } from '../../../helpers'
-  import type { TimelineContentProps } from '../types'
+  import type { TimelineContentProps, TimelineDateProps } from '../types'
 
   export let timelineContent: TimelineContentProps
+  export let timelineDate: TimelineDateProps;
+
+  const onMobile = isMobile();
   $: alignmentStyles = `margin-left: ${
-    isMobile() ? '60px' : timelineContent.alingment === 'left' ? 'auto' : '60px'
+    onMobile ? '60px' : timelineContent.alingment === 'left' ? 'auto' : '60px'
   }; margin-right: ${
-    isMobile() ? 'auto' : timelineContent.alingment === 'left' ? '60px' : 'auto'
+    onMobile ? 'auto' : timelineContent.alingment === 'left' ? '60px' : 'auto'
   }`
 </script>
 
@@ -15,6 +18,9 @@
     <h2>{timelineContent.title}</h2>
     <h3>{timelineContent.shortDesc}</h3>
     <span>{timelineContent.content}</span>
+    {#if onMobile}
+        <span class="timeline-date">{timelineDate.date}</span>
+    {/if}
   </div>
 </div>
 
@@ -24,7 +30,8 @@
     max-width: 400px;
     margin-top: styles.$margins-xlarge;
     margin-bottom: styles.$margins-xlarge;
-    box-shadow: 0px 1px 10px black;
+    box-shadow: 1px 2px 7px rgb(0, 0, 0, 0.5);
+    border-radius: 1%;
   }
 
   .timeline-post-text {
@@ -45,6 +52,12 @@
       font-size: 14px;
       white-space: pre-line;
       font-weight: 300;
+    }
+
+    .timeline-date {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 650;
     }
   }
 

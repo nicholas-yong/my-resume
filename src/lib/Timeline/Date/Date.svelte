@@ -23,6 +23,7 @@
   span {
     color: black;
     white-space: pre-line;
+    font-weight: 650;
   }
 
   .timeline-component {

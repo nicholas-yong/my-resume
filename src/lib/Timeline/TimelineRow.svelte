@@ -4,7 +4,7 @@
   import Post from './Post/Post.svelte'
   import type { TimelinePost } from './types'
   import { isMobile } from '../../helpers'
-  import { SvelteComponent, onMount } from 'svelte'
+  import { onMount } from 'svelte'
   export let timelinePost: TimelinePost
 
   let layout: Array<any> = []
@@ -37,6 +37,7 @@
         type: timelinePost.type,
         alingment: timelinePost.alingment,
         shortDesc: timelinePost.shortDesc,
+        color: timelinePost.color,
       }}
       timelineDate={{
         date: timelinePost.date,
